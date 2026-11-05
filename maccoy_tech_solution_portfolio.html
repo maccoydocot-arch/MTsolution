@@ -1,0 +1,929 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Maccoy Docot | IT Infrastructure, Network & Security Specialist</title>
+    
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        mint: {
+                            400: '#2ed573',
+                            500: '#00e6a8',
+                            600: '#00b894',
+                            glow: 'rgba(0, 230, 168, 0.35)'
+                        },
+                        cyber: {
+                            blue: '#0984e3',
+                            cyan: '#00cec9',
+                            dark: '#0b1329',
+                            card: '#111c38',
+                            hover: '#18274d'
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    
+    <!-- Google Fonts: Inter & JetBrains Mono -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #070d19;
+            color: #e2e8f0;
+        }
+
+        /* Glassmorphism utility */
+        .glass-panel {
+            background: rgba(17, 28, 56, 0.75);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid rgba(0, 230, 168, 0.15);
+        }
+
+        .glass-panel-hover:hover {
+            border-color: rgba(0, 230, 168, 0.5);
+            box-shadow: 0 10px 30px -10px rgba(0, 230, 168, 0.25);
+        }
+
+        /* Glow animation */
+        .glow-border {
+            box-shadow: 0 0 25px rgba(0, 230, 168, 0.3);
+        }
+
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #070d19;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #1e293b;
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #00e6a8;
+        }
+
+        /* Hero image glow effect */
+        .hero-img-box {
+            position: relative;
+        }
+        .hero-img-box::after {
+            content: '';
+            position: absolute;
+            inset: -4px;
+            background: linear-gradient(135deg, #00e6a8, #00cec9, #0984e3);
+            border-radius: 1.25rem;
+            z-index: -1;
+            filter: blur(12px);
+            opacity: 0.7;
+        }
+    </style>
+</head>
+<body class="antialiased selection:bg-mint-500 selection:text-slate-900">
+
+    <!-- NAVBAR -->
+    <header class="fixed top-0 left-0 w-full z-50 glass-panel border-b border-slate-800/80 transition-all duration-300" id="navbar">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-20">
+                
+                <!-- Brand Logo -->
+                <a href="#home" class="flex items-center gap-3 group">
+                    <div class="w-10 h-10 rounded-xl bg-gradient-to-br from-mint-500 to-cyber-blue flex items-center justify-center text-slate-950 font-black text-xl shadow-lg shadow-mint-500/20 group-hover:scale-105 transition-transform">
+                        M
+                    </div>
+                    <div>
+                        <span class="text-xl font-bold tracking-tight text-white block leading-tight">
+                            Maccoy<span class="text-mint-500">Tech</span>
+                        </span>
+                        <span class="text-[10px] tracking-widest text-slate-400 font-mono uppercase block">
+                            IT • Network • Security
+                        </span>
+                    </div>
+                </a>
+
+                <!-- Desktop Navigation Links -->
+                <nav class="hidden md:flex items-center gap-1 bg-slate-900/60 p-1.5 rounded-full border border-slate-800">
+                    <a href="#home" class="nav-link px-4 py-2 rounded-full text-sm font-medium text-slate-300 hover:text-white hover:bg-slate-800/80 transition-all">Home</a>
+                    <a href="#about" class="nav-link px-4 py-2 rounded-full text-sm font-medium text-slate-300 hover:text-white hover:bg-slate-800/80 transition-all">About</a>
+                    <a href="#skills" class="nav-link px-4 py-2 rounded-full text-sm font-medium text-slate-300 hover:text-white hover:bg-slate-800/80 transition-all">Skills</a>
+                    <a href="#projects" class="nav-link px-4 py-2 rounded-full text-sm font-medium text-slate-300 hover:text-white hover:bg-slate-800/80 transition-all">Projects</a>
+                    <a href="#experience" class="nav-link px-4 py-2 rounded-full text-sm font-medium text-slate-300 hover:text-white hover:bg-slate-800/80 transition-all">Experience</a>
+                    <a href="#contact" class="nav-link px-4 py-2 rounded-full text-sm font-medium text-slate-300 hover:text-white hover:bg-slate-800/80 transition-all">Contact</a>
+                </nav>
+
+                <!-- Header Actions & Socials -->
+                <div class="hidden lg:flex items-center gap-3">
+                    <a href="https://github.com/maccoydocot" target="_blank" rel="noopener noreferrer" class="w-10 h-10 rounded-lg bg-slate-800/80 border border-slate-700/60 flex items-center justify-center text-slate-300 hover:text-mint-500 hover:border-mint-500 transition-all" title="GitHub Profile">
+                        <i class="fab fa-github text-lg"></i>
+                    </a>
+                    <a href="https://www.linkedin.com/in/maccoydocot" target="_blank" rel="noopener noreferrer" class="w-10 h-10 rounded-lg bg-slate-800/80 border border-slate-700/60 flex items-center justify-center text-slate-300 hover:text-cyber-cyan hover:border-cyber-cyan transition-all" title="LinkedIn Profile">
+                        <i class="fab fa-linkedin-in text-lg"></i>
+                    </a>
+                    <a href="mailto:macccoydocot@gmail.com" class="w-10 h-10 rounded-lg bg-slate-800/80 border border-slate-700/60 flex items-center justify-center text-slate-300 hover:text-mint-500 hover:border-mint-500 transition-all" title="Email Me">
+                        <i class="fas fa-envelope text-lg"></i>
+                    </a>
+                </div>
+
+                <!-- Mobile Menu Button -->
+                <div class="md:hidden flex items-center">
+                    <button id="mobileMenuBtn" class="p-2.5 rounded-xl bg-slate-800 border border-slate-700 text-slate-300 hover:text-mint-500 focus:outline-none">
+                        <i class="fas fa-bars text-xl" id="menuIcon"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mobile Navigation Menu Dropdown -->
+        <div id="mobileMenu" class="hidden md:hidden bg-slate-900/95 border-b border-slate-800 px-4 pt-3 pb-6 space-y-2">
+            <a href="#home" class="mobile-nav-link block px-4 py-2.5 rounded-lg text-base font-medium text-slate-300 hover:bg-slate-800 hover:text-mint-500">Home</a>
+            <a href="#about" class="mobile-nav-link block px-4 py-2.5 rounded-lg text-base font-medium text-slate-300 hover:bg-slate-800 hover:text-mint-500">About</a>
+            <a href="#skills" class="mobile-nav-link block px-4 py-2.5 rounded-lg text-base font-medium text-slate-300 hover:bg-slate-800 hover:text-mint-500">Skills</a>
+            <a href="#projects" class="mobile-nav-link block px-4 py-2.5 rounded-lg text-base font-medium text-slate-300 hover:bg-slate-800 hover:text-mint-500">Projects</a>
+            <a href="#experience" class="mobile-nav-link block px-4 py-2.5 rounded-lg text-base font-medium text-slate-300 hover:bg-slate-800 hover:text-mint-500">Experience</a>
+            <a href="#contact" class="mobile-nav-link block px-4 py-2.5 rounded-lg text-base font-medium text-slate-300 hover:bg-slate-800 hover:text-mint-500">Contact</a>
+            
+            <div class="pt-4 border-t border-slate-800 flex items-center gap-4 px-4">
+                <a href="https://github.com/maccoydocot" target="_blank" class="text-slate-400 hover:text-mint-500 text-xl"><i class="fab fa-github"></i></a>
+                <a href="https://www.linkedin.com/in/maccoydocot" target="_blank" class="text-slate-400 hover:text-cyber-cyan text-xl"><i class="fab fa-linkedin"></i></a>
+                <a href="mailto:macccoydocot@gmail.com" class="text-slate-400 hover:text-mint-500 text-xl"><i class="fas fa-envelope"></i></a>
+            </div>
+        </div>
+    </header>
+
+    <!-- HERO SECTION -->
+    <section id="home" class="pt-32 pb-20 lg:pt-40 lg:pb-32 min-h-screen flex items-center relative overflow-hidden">
+        <!-- Background Decorative Glows -->
+        <div class="absolute top-1/4 left-10 w-96 h-96 bg-mint-500/10 rounded-full blur-3xl pointer-events-none"></div>
+        <div class="absolute bottom-10 right-10 w-96 h-96 bg-cyber-blue/15 rounded-full blur-3xl pointer-events-none"></div>
+
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+                
+                <!-- Hero Left Column Text -->
+                <div class="lg:col-span-7 space-y-6">
+                    <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-mint-500/10 border border-mint-500/30 text-mint-500 text-xs sm:text-sm font-semibold tracking-wide">
+                        <span class="w-2 h-2 rounded-full bg-mint-500 animate-pulse"></span>
+                        Available for IT Infrastructure & Network Solutions
+                    </div>
+
+                    <div class="space-y-2">
+                        <p class="text-lg text-slate-400 font-medium">Hello, I'm</p>
+                        <h1 class="text-4xl sm:text-6xl font-extrabold tracking-tight text-white">
+                            Maccoy <span class="text-transparent bg-clip-text bg-gradient-to-r from-mint-500 via-cyber-cyan to-cyber-blue">Docot</span>
+                        </h1>
+                        <p class="text-lg sm:text-xl font-semibold text-slate-300 pt-1">
+                            IT Infrastructure | Network Administrator | Systems Specialist
+                        </p>
+                    </div>
+
+                    <blockquote class="p-4 rounded-xl bg-slate-900/80 border-l-4 border-mint-500 text-slate-300 italic text-sm sm:text-base">
+                        "Building Reliable IT Solutions for a Smarter and Connected World."
+                    </blockquote>
+
+                    <!-- Key Skills Bullet Badges -->
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-2.5 pt-2">
+                        <div class="flex items-center gap-2.5 text-slate-300 text-sm">
+                            <i class="fas fa-check-circle text-mint-500"></i>
+                            <span>Network Infrastructure & VLAN</span>
+                        </div>
+                        <div class="flex items-center gap-2.5 text-slate-300 text-sm">
+                            <i class="fas fa-check-circle text-mint-500"></i>
+                            <span>IT Support & Troubleshooting</span>
+                        </div>
+                        <div class="flex items-center gap-2.5 text-slate-300 text-sm">
+                            <i class="fas fa-check-circle text-mint-500"></i>
+                            <span>CCTV & Access Control Systems</span>
+                        </div>
+                        <div class="flex items-center gap-2.5 text-slate-300 text-sm">
+                            <i class="fas fa-check-circle text-mint-500"></i>
+                            <span>pfSense Security & Storage NAS</span>
+                        </div>
+                    </div>
+
+                    <!-- Call To Action Buttons -->
+                    <div class="flex flex-wrap items-center gap-4 pt-4">
+                        <a href="#projects" class="px-7 py-3.5 rounded-xl bg-gradient-to-r from-mint-500 to-cyber-cyan text-slate-950 font-bold text-sm shadow-lg shadow-mint-500/20 hover:scale-105 active:scale-95 transition-all flex items-center gap-2">
+                            <i class="fas fa-project-diagram"></i>
+                            View My Projects
+                        </a>
+                        <a href="#contact" class="px-7 py-3.5 rounded-xl glass-panel text-white font-semibold text-sm border border-slate-700 hover:border-mint-500 hover:text-mint-500 transition-all flex items-center gap-2">
+                            <i class="fas fa-paper-plane"></i>
+                            Get In Touch
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Hero Right Column Profile Photo Container -->
+                <div class="lg:col-span-5 flex justify-center">
+                    <div class="hero-img-box w-full max-w-md rounded-2xl p-2 bg-slate-900 border border-slate-800 shadow-2xl relative">
+                        <div class="relative overflow-hidden rounded-xl aspect-[4/4] sm:aspect-[4/5] bg-slate-800">
+                            <!-- Target Photo Reference with onerror fallback -->
+                            <img src="1000049511_7e5479.jpg" 
+                                 alt="Maccoy Docot - Maccoy Tech Solution" 
+                                 class="w-full h-full object-cover object-top hover:scale-105 transition-transform duration-500"
+                                 onerror="this.onerror=null; this.src='https://placehold.co/600x700/0f172a/00e6a8?text=Maccoy+Docot';">
+                            
+                            <!-- Overlay Badge -->
+                            <div class="absolute bottom-4 left-4 right-4 glass-panel p-3.5 rounded-xl flex items-center gap-3">
+                                <div class="w-3 h-3 rounded-full bg-mint-500 animate-ping"></div>
+                                <div>
+                                    <p class="text-xs font-semibold text-white">Maccoy Tech Solution</p>
+                                    <p class="text-[11px] text-slate-400">Build • Secure • Innovate</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- ABOUT SECTION -->
+    <section id="about" class="py-20 relative bg-slate-950/60 border-t border-b border-slate-900">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            
+            <div class="text-center max-w-3xl mx-auto space-y-3 mb-16">
+                <h2 class="text-xs font-bold uppercase tracking-widest text-mint-500">About Me</h2>
+                <p class="text-3xl sm:text-4xl font-extrabold text-white">Dedicated IT Specialist Delivering End-to-End Solutions</p>
+                <div class="w-16 h-1 bg-gradient-to-r from-mint-500 to-cyber-blue mx-auto rounded-full"></div>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 items-stretch">
+                
+                <!-- About Main Narrative -->
+                <div class="lg:col-span-7 glass-panel p-8 rounded-2xl flex flex-col justify-between">
+                    <div class="space-y-4">
+                        <div class="flex items-center gap-3 text-mint-500 text-xl font-bold">
+                            <i class="fas fa-user-shield"></i>
+                            <h3>Professional Background</h3>
+                        </div>
+                        <p class="text-slate-300 leading-relaxed text-sm sm:text-base">
+                            I am an experienced IT professional specializing in IT support, network administration, physical security deployments, and systems engineer solutions. My expertise lies in designing, configuring, and maintaining robust IT infrastructures for businesses and institutional facilities.
+                        </p>
+                        <p class="text-slate-300 leading-relaxed text-sm sm:text-base">
+                            From implementing advanced network segmentation using pfSense and VLAN switches to deploying enterprise Wi-Fi systems with TP-Link Omada, high-definition IP CCTV security networks, door access biometric controllers, and fault-tolerant NAS storage—I bridge technology and security to deliver seamless operations.
+                        </p>
+                    </div>
+
+                    <div class="mt-8 pt-6 border-t border-slate-800 grid grid-cols-2 sm:grid-cols-3 gap-4 text-center">
+                        <div class="p-3 rounded-xl bg-slate-900/60 border border-slate-800">
+                            <span class="block text-2xl font-black text-mint-500">100%</span>
+                            <span class="text-xs text-slate-400">Reliability Focus</span>
+                        </div>
+                        <div class="p-3 rounded-xl bg-slate-900/60 border border-slate-800">
+                            <span class="block text-2xl font-black text-cyber-cyan">Full-Stack</span>
+                            <span class="text-xs text-slate-400">IT Infrastructure</span>
+                        </div>
+                        <div class="p-3 rounded-xl bg-slate-900/60 border border-slate-800 col-span-2 sm:col-span-1">
+                            <span class="block text-2xl font-black text-cyber-blue">Secure</span>
+                            <span class="text-xs text-slate-400">Network Topology</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Approach & Career Goals -->
+                <div class="lg:col-span-5 space-y-6 flex flex-col justify-between">
+                    
+                    <!-- My Approach Card -->
+                    <div class="glass-panel p-6 rounded-2xl glass-panel-hover transition-all">
+                        <div class="flex items-center gap-3 text-cyber-cyan text-lg font-bold mb-3">
+                            <i class="fas fa-lightbulb"></i>
+                            <h3>My Approach</h3>
+                        </div>
+                        <ul class="space-y-2.5 text-sm text-slate-300">
+                            <li class="flex items-start gap-2">
+                                <i class="fas fa-check text-mint-500 mt-1"></i>
+                                <span><strong>Analyze & Plan:</strong> Understand business needs & map network topologies.</span>
+                            </li>
+                            <li class="flex items-start gap-2">
+                                <i class="fas fa-check text-mint-500 mt-1"></i>
+                                <span><strong>Implement:</strong> Deploy structured cabling, firewalls, switches & security access.</span>
+                            </li>
+                            <li class="flex items-start gap-2">
+                                <i class="fas fa-check text-mint-500 mt-1"></i>
+                                <span><strong>Monitor & Secure:</strong> Ensure uptime, backups, and active firewall policies.</span>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <!-- Career Goals Card -->
+                    <div class="glass-panel p-6 rounded-2xl glass-panel-hover transition-all">
+                        <div class="flex items-center gap-3 text-mint-500 text-lg font-bold mb-3">
+                            <i class="fas fa-bullseye"></i>
+                            <h3>Career Goals</h3>
+                        </div>
+                        <p class="text-sm text-slate-300 leading-relaxed">
+                            To continuously evolve as a Senior Network & Systems Engineer, lead large-scale enterprise IT infrastructure projects, and deliver high-standard cybersecurity and automation solutions globally.
+                        </p>
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- TECHNICAL SKILLS SECTION -->
+    <section id="skills" class="py-20 relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            
+            <div class="text-center max-w-3xl mx-auto space-y-3 mb-16">
+                <h2 class="text-xs font-bold uppercase tracking-widest text-mint-500">Technical Mastery</h2>
+                <p class="text-3xl sm:text-4xl font-extrabold text-white">Skills & Core Technologies</p>
+                <div class="w-16 h-1 bg-gradient-to-r from-mint-500 to-cyber-blue mx-auto rounded-full"></div>
+            </div>
+
+            <!-- Grid of Tech Skills -->
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                
+                <!-- Skill 1 -->
+                <div class="glass-panel p-6 rounded-2xl glass-panel-hover transition-all group">
+                    <div class="w-12 h-12 rounded-xl bg-blue-600/20 text-blue-400 flex items-center justify-center text-2xl mb-4 group-hover:scale-110 transition-transform">
+                        <i class="fab fa-windows"></i>
+                    </div>
+                    <h3 class="text-lg font-bold text-white mb-2">Windows Server & Workstation</h3>
+                    <p class="text-xs sm:text-sm text-slate-400">Windows Server installation, Active Directory Domain Services, DNS, DHCP, User Access Policies & Troubleshooting.</p>
+                </div>
+
+                <!-- Skill 2 -->
+                <div class="glass-panel p-6 rounded-2xl glass-panel-hover transition-all group">
+                    <div class="w-12 h-12 rounded-xl bg-orange-600/20 text-orange-400 flex items-center justify-center text-2xl mb-4 group-hover:scale-110 transition-transform">
+                        <i class="fab fa-linux"></i>
+                    </div>
+                    <h3 class="text-lg font-bold text-white mb-2">Linux Systems (Ubuntu/Debian)</h3>
+                    <p class="text-xs sm:text-sm text-slate-400">Basic shell scripting, Linux web/file server configuration, service management, user permissions & updates.</p>
+                </div>
+
+                <!-- Skill 3 -->
+                <div class="glass-panel p-6 rounded-2xl glass-panel-hover transition-all group">
+                    <div class="w-12 h-12 rounded-xl bg-mint-500/20 text-mint-500 flex items-center justify-center text-2xl mb-4 group-hover:scale-110 transition-transform">
+                        <i class="fas fa-shield-halved"></i>
+                    </div>
+                    <h3 class="text-lg font-bold text-white mb-2">pfSense Firewall</h3>
+                    <p class="text-xs sm:text-sm text-slate-400">Open-source firewall deployment, WAN load balancing, failover, OpenVPN, Snort IDS/IPS, Rules & NAT.</p>
+                </div>
+
+                <!-- Skill 4 -->
+                <div class="glass-panel p-6 rounded-2xl glass-panel-hover transition-all group">
+                    <div class="w-12 h-12 rounded-xl bg-cyan-600/20 text-cyan-400 flex items-center justify-center text-2xl mb-4 group-hover:scale-110 transition-transform">
+                        <i class="fas fa-wifi"></i>
+                    </div>
+                    <h3 class="text-lg font-bold text-white mb-2">TP-Link Omada Systems</h3>
+                    <p class="text-xs sm:text-sm text-slate-400">SDN Software Controllers, EAP Access Points, Managed PoE Switches, Multi-SSID Wi-Fi & Captive Portals.</p>
+                </div>
+
+                <!-- Skill 5 -->
+                <div class="glass-panel p-6 rounded-2xl glass-panel-hover transition-all group">
+                    <div class="w-12 h-12 rounded-xl bg-indigo-600/20 text-indigo-400 flex items-center justify-center text-2xl mb-4 group-hover:scale-110 transition-transform">
+                        <i class="fas fa-network-wired"></i>
+                    </div>
+                    <h3 class="text-lg font-bold text-white mb-2">Networking (TCP/IP & VLAN)</h3>
+                    <p class="text-xs sm:text-sm text-slate-400">VLAN segmentation, subnetting, static routing, structured Ethernet cabling, patch panel punchdown & testing.</p>
+                </div>
+
+                <!-- Skill 6 -->
+                <div class="glass-panel p-6 rounded-2xl glass-panel-hover transition-all group">
+                    <div class="w-12 h-12 rounded-xl bg-emerald-600/20 text-emerald-400 flex items-center justify-center text-2xl mb-4 group-hover:scale-110 transition-transform">
+                        <i class="fas fa-database"></i>
+                    </div>
+                    <h3 class="text-lg font-bold text-white mb-2">NAS & Data Storage</h3>
+                    <p class="text-xs sm:text-sm text-slate-400">TrueNAS / Synology installation, RAID configurations (RAID1, RAIDZ2), SMB share permissions & automated backups.</p>
+                </div>
+
+                <!-- Skill 7 -->
+                <div class="glass-panel p-6 rounded-2xl glass-panel-hover transition-all group">
+                    <div class="w-12 h-12 rounded-xl bg-purple-600/20 text-purple-400 flex items-center justify-center text-2xl mb-4 group-hover:scale-110 transition-transform">
+                        <i class="fas fa-video"></i>
+                    </div>
+                    <h3 class="text-lg font-bold text-white mb-2">CCTV & Surveillance</h3>
+                    <p class="text-xs sm:text-sm text-slate-400">IP Cameras, DVR/NVR setup, PoE switches, DDNS remote smartphone viewing, and PTZ camera positioning.</p>
+                </div>
+
+                <!-- Skill 8 -->
+                <div class="glass-panel p-6 rounded-2xl glass-panel-hover transition-all group">
+                    <div class="w-12 h-12 rounded-xl bg-red-600/20 text-red-400 flex items-center justify-center text-2xl mb-4 group-hover:scale-110 transition-transform">
+                        <i class="fas fa-fingerprint"></i>
+                    </div>
+                    <h3 class="text-lg font-bold text-white mb-2">Door Access Control</h3>
+                    <p class="text-xs sm:text-sm text-slate-400">Biometric fingerprint readers, RFID keycard readers, magnetic locks, exit buttons & attendance management software.</p>
+                </div>
+
+                <!-- Skill 9 -->
+                <div class="glass-panel p-6 rounded-2xl glass-panel-hover transition-all group">
+                    <div class="w-12 h-12 rounded-xl bg-teal-600/20 text-teal-400 flex items-center justify-center text-2xl mb-4 group-hover:scale-110 transition-transform">
+                        <i class="fas fa-print"></i>
+                    </div>
+                    <h3 class="text-lg font-bold text-white mb-2">Printer & Hardware Maintenance</h3>
+                    <p class="text-xs sm:text-sm text-slate-400">Network printer mapping, thermal printer setup, desktop/laptop hardware upgrades, thermal paste & cleaning.</p>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- PROJECTS SECTION -->
+    <section id="projects" class="py-20 relative bg-slate-950/60 border-t border-b border-slate-900">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            
+            <div class="text-center max-w-3xl mx-auto space-y-3 mb-12">
+                <h2 class="text-xs font-bold uppercase tracking-widest text-mint-500">Portfolio Work</h2>
+                <p class="text-3xl sm:text-4xl font-extrabold text-white">Actual IT Projects & Installations</p>
+                <div class="w-16 h-1 bg-gradient-to-r from-mint-500 to-cyber-blue mx-auto rounded-full"></div>
+            </div>
+
+            <!-- Project Filter Buttons -->
+            <div class="flex flex-wrap items-center justify-center gap-2 mb-10" id="projectFilters">
+                <button class="filter-btn active px-4 py-2 rounded-xl text-xs font-semibold bg-mint-500 text-slate-950 transition-all" data-filter="all">All Solutions</button>
+                <button class="filter-btn px-4 py-2 rounded-xl text-xs font-semibold bg-slate-800 text-slate-300 hover:bg-slate-700 transition-all" data-filter="network">Networking</button>
+                <button class="filter-btn px-4 py-2 rounded-xl text-xs font-semibold bg-slate-800 text-slate-300 hover:bg-slate-700 transition-all" data-filter="security">Security & CCTV</button>
+                <button class="filter-btn px-4 py-2 rounded-xl text-xs font-semibold bg-slate-800 text-slate-300 hover:bg-slate-700 transition-all" data-filter="storage">NAS & System</button>
+            </div>
+
+            <!-- Projects Grid -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8" id="projectsContainer">
+                
+                <!-- Project 1: pfSense -->
+                <div class="project-card glass-panel rounded-2xl overflow-hidden glass-panel-hover transition-all flex flex-col" data-category="network">
+                    <div class="p-6 space-y-4 flex-1">
+                        <div class="flex items-center justify-between">
+                            <span class="px-2.5 py-1 rounded-md bg-mint-500/20 text-mint-500 text-[11px] font-bold uppercase tracking-wider">Network & Security</span>
+                            <i class="fas fa-shield-alt text-mint-500 text-xl"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-white">pfSense Network Segmentation</h3>
+                        <p class="text-xs sm:text-sm text-slate-300 leading-relaxed">
+                            Configured dedicated pfSense firewall with segmented VLANs (Management, Staff, Guest Wi-Fi). Implemented firewall rule sets, outbound NAT, DNS resolver, and OpenVPN remote gateway.
+                        </p>
+                        <div class="flex flex-wrap gap-1.5 pt-2">
+                            <span class="text-[11px] px-2 py-0.5 rounded bg-slate-800 text-slate-300 font-mono">pfSense</span>
+                            <span class="text-[11px] px-2 py-0.5 rounded bg-slate-800 text-slate-300 font-mono">VLAN</span>
+                            <span class="text-[11px] px-2 py-0.5 rounded bg-slate-800 text-slate-300 font-mono">OpenVPN</span>
+                        </div>
+                    </div>
+                    <div class="p-4 bg-slate-900/60 border-t border-slate-800/80 flex justify-between items-center">
+                        <span class="text-xs text-slate-400">Implementation Lab</span>
+                        <button class="text-xs text-mint-500 font-semibold hover:underline flex items-center gap-1" onclick="openProjectModal('pfSense Network Segmentation', 'Design and deployment of pfSense firewall appliance. Isolated untrusted guest traffic from corporate internal networks, enabled snort packet inspection, configured failover multi-WAN connectivity.')">
+                            Details <i class="fas fa-arrow-right text-[10px]"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Project 2: TP-Link Omada -->
+                <div class="project-card glass-panel rounded-2xl overflow-hidden glass-panel-hover transition-all flex flex-col" data-category="network">
+                    <div class="p-6 space-y-4 flex-1">
+                        <div class="flex items-center justify-between">
+                            <span class="px-2.5 py-1 rounded-md bg-cyan-500/20 text-cyan-400 text-[11px] font-bold uppercase tracking-wider">Wireless Infrastructure</span>
+                            <i class="fas fa-wifi text-cyan-400 text-xl"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-white">TP-Link Omada Business Wi-Fi</h3>
+                        <p class="text-xs sm:text-sm text-slate-300 leading-relaxed">
+                            Full deployment of Omada SDN controller with PoE managed switches and ceiling-mount access points. Seamless roaming across multi-story office rooms with bandwidth throttling.
+                        </p>
+                        <div class="flex flex-wrap gap-1.5 pt-2">
+                            <span class="text-[11px] px-2 py-0.5 rounded bg-slate-800 text-slate-300 font-mono">Omada Controller</span>
+                            <span class="text-[11px] px-2 py-0.5 rounded bg-slate-800 text-slate-300 font-mono">PoE Switch</span>
+                            <span class="text-[11px] px-2 py-0.5 rounded bg-slate-800 text-slate-300 font-mono">Fast Roaming</span>
+                        </div>
+                    </div>
+                    <div class="p-4 bg-slate-900/60 border-t border-slate-800/80 flex justify-between items-center">
+                        <span class="text-xs text-slate-400">Managed Installation</span>
+                        <button class="text-xs text-mint-500 font-semibold hover:underline flex items-center gap-1" onclick="openProjectModal('TP-Link Omada Business Wi-Fi', 'Structured cabling, Omada hardware adoption, SSID separation for management vs guest, captive portal authentication, and real-time client monitoring.')">
+                            Details <i class="fas fa-arrow-right text-[10px]"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Project 3: CCTV -->
+                <div class="project-card glass-panel rounded-2xl overflow-hidden glass-panel-hover transition-all flex flex-col" data-category="security">
+                    <div class="p-6 space-y-4 flex-1">
+                        <div class="flex items-center justify-between">
+                            <span class="px-2.5 py-1 rounded-md bg-purple-500/20 text-purple-400 text-[11px] font-bold uppercase tracking-wider">Surveillance</span>
+                            <i class="fas fa-video text-purple-400 text-xl"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-white">IP CCTV & NVR System Setup</h3>
+                        <p class="text-xs sm:text-sm text-slate-300 leading-relaxed">
+                            Complete IP camera installation, NVR continuous/motion-detection recording setup, port forwarding / DDNS configuration for secure remote live view on mobile phones.
+                        </p>
+                        <div class="flex flex-wrap gap-1.5 pt-2">
+                            <span class="text-[11px] px-2 py-0.5 rounded bg-slate-800 text-slate-300 font-mono">IP Cameras</span>
+                            <span class="text-[11px] px-2 py-0.5 rounded bg-slate-800 text-slate-300 font-mono">NVR / DVR</span>
+                            <span class="text-[11px] px-2 py-0.5 rounded bg-slate-800 text-slate-300 font-mono">Remote View</span>
+                        </div>
+                    </div>
+                    <div class="p-4 bg-slate-900/60 border-t border-slate-800/80 flex justify-between items-center">
+                        <span class="text-xs text-slate-400">Physical Security</span>
+                        <button class="text-xs text-mint-500 font-semibold hover:underline flex items-center gap-1" onclick="openProjectModal('IP CCTV & NVR Security Setup', 'Positioned indoor and outdoor dome/bullet IP cameras, configured NVR storage schedules, set motion alerts, and enabled secure smartphone access.')">
+                            Details <i class="fas fa-arrow-right text-[10px]"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Project 4: Door Access -->
+                <div class="project-card glass-panel rounded-2xl overflow-hidden glass-panel-hover transition-all flex flex-col" data-category="security">
+                    <div class="p-6 space-y-4 flex-1">
+                        <div class="flex items-center justify-between">
+                            <span class="px-2.5 py-1 rounded-md bg-red-500/20 text-red-400 text-[11px] font-bold uppercase tracking-wider">Access Control</span>
+                            <i class="fas fa-fingerprint text-red-400 text-xl"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-white">Door Access & Biometrics</h3>
+                        <p class="text-xs sm:text-sm text-slate-300 leading-relaxed">
+                            Installed biometric terminal locks, magnetic locks, push buttons, emergency break glass units, and centralized attendance management software synchronization.
+                        </p>
+                        <div class="flex flex-wrap gap-1.5 pt-2">
+                            <span class="text-[11px] px-2 py-0.5 rounded bg-slate-800 text-slate-300 font-mono">Biometrics</span>
+                            <span class="text-[11px] px-2 py-0.5 rounded bg-slate-800 text-slate-300 font-mono">Magnetic Lock</span>
+                            <span class="text-[11px] px-2 py-0.5 rounded bg-slate-800 text-slate-300 font-mono">Attendance</span>
+                        </div>
+                    </div>
+                    <div class="p-4 bg-slate-900/60 border-t border-slate-800/80 flex justify-between items-center">
+                        <span class="text-xs text-slate-400">Facility Security</span>
+                        <button class="text-xs text-mint-500 font-semibold hover:underline flex items-center gap-1" onclick="openProjectModal('Door Access Control Integration', 'Mounted heavy-duty magnetic locks, wired exit request buttons, enrolled employee biometric data, and configured daily access logs.')">
+                            Details <i class="fas fa-arrow-right text-[10px]"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Project 5: NAS Storage -->
+                <div class="project-card glass-panel rounded-2xl overflow-hidden glass-panel-hover transition-all flex flex-col" data-category="storage">
+                    <div class="p-6 space-y-4 flex-1">
+                        <div class="flex items-center justify-between">
+                            <span class="px-2.5 py-1 rounded-md bg-emerald-500/20 text-emerald-400 text-[11px] font-bold uppercase tracking-wider">Data Storage</span>
+                            <i class="fas fa-database text-emerald-400 text-xl"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-white">Centralized NAS Storage</h3>
+                        <p class="text-xs sm:text-sm text-slate-300 leading-relaxed">
+                            Built redundant TrueNAS storage system configured with RAIDZ2 array for business backup. Configured SMB share permissions, snapshot schedules, and disaster recovery.
+                        </p>
+                        <div class="flex flex-wrap gap-1.5 pt-2">
+                            <span class="text-[11px] px-2 py-0.5 rounded bg-slate-800 text-slate-300 font-mono">TrueNAS</span>
+                            <span class="text-[11px] px-2 py-0.5 rounded bg-slate-800 text-slate-300 font-mono">RAIDZ2</span>
+                            <span class="text-[11px] px-2 py-0.5 rounded bg-slate-800 text-slate-300 font-mono">SMB Share</span>
+                        </div>
+                    </div>
+                    <div class="p-4 bg-slate-900/60 border-t border-slate-800/80 flex justify-between items-center">
+                        <span class="text-xs text-slate-400">Data Redundancy</span>
+                        <button class="text-xs text-mint-500 font-semibold hover:underline flex items-center gap-1" onclick="openProjectModal('Centralized NAS Storage Deployment', 'Custom server build with redundant drives. Assigned strict user group access rights, mapped network drives for employees, and enabled automated night backups.')">
+                            Details <i class="fas fa-arrow-right text-[10px]"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Project 6: Network Infrastructure -->
+                <div class="project-card glass-panel rounded-2xl overflow-hidden glass-panel-hover transition-all flex flex-col" data-category="network">
+                    <div class="p-6 space-y-4 flex-1">
+                        <div class="flex items-center justify-between">
+                            <span class="px-2.5 py-1 rounded-md bg-blue-500/20 text-blue-400 text-[11px] font-bold uppercase tracking-wider">Infrastructure</span>
+                            <i class="fas fa-server text-blue-400 text-xl"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-white">Structured Cabling & Rack Organization</h3>
+                        <p class="text-xs sm:text-sm text-slate-300 leading-relaxed">
+                            Organized server rack enclosures, patch panels, cable management, color-coded Cat6 ethernet patch cords, and server UPS battery backup systems.
+                        </p>
+                        <div class="flex flex-wrap gap-1.5 pt-2">
+                            <span class="text-[11px] px-2 py-0.5 rounded bg-slate-800 text-slate-300 font-mono">Cat6 Cable</span>
+                            <span class="text-[11px] px-2 py-0.5 rounded bg-slate-800 text-slate-300 font-mono">Patch Panel</span>
+                            <span class="text-[11px] px-2 py-0.5 rounded bg-slate-800 text-slate-300 font-mono">Rack Build</span>
+                        </div>
+                    </div>
+                    <div class="p-4 bg-slate-900/60 border-t border-slate-800/80 flex justify-between items-center">
+                        <span class="text-xs text-slate-400">Server Room Build</span>
+                        <button class="text-xs text-mint-500 font-semibold hover:underline flex items-center gap-1" onclick="openProjectModal('Structured Network Rack Setup', 'Re-cabled cluttered server rooms into clean rack mounts with documented patch panel port maps, labeled switches, and power distribution.')">
+                            Details <i class="fas fa-arrow-right text-[10px]"></i>
+                        </button>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- EXPERIENCE SECTION -->
+    <section id="experience" class="py-20 relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            
+            <div class="text-center max-w-3xl mx-auto space-y-3 mb-16">
+                <h2 class="text-xs font-bold uppercase tracking-widest text-mint-500">Career History</h2>
+                <p class="text-3xl sm:text-4xl font-extrabold text-white">Work Experience</p>
+                <div class="w-16 h-1 bg-gradient-to-r from-mint-500 to-cyber-blue mx-auto rounded-full"></div>
+            </div>
+
+            <!-- Timeline Structure -->
+            <div class="max-w-4xl mx-auto">
+                <div class="relative border-l-2 border-mint-500/40 ml-4 sm:ml-8 pl-6 sm:pl-10 space-y-12">
+                    
+                    <!-- Experience Item 1 -->
+                    <div class="relative group">
+                        <!-- Timeline Node Dot -->
+                        <div class="absolute -left-[31px] sm:-left-[47px] top-1.5 w-5 h-5 rounded-full bg-slate-950 border-4 border-mint-500 group-hover:scale-125 transition-transform"></div>
+
+                        <div class="glass-panel p-6 sm:p-8 rounded-2xl space-y-4">
+                            <div class="flex flex-wrap items-center justify-between gap-2 border-b border-slate-800 pb-4">
+                                <div>
+                                    <h3 class="text-xl font-bold text-white">IT Technical Support & Network Specialist</h3>
+                                    <p class="text-sm font-semibold text-mint-500">TeamGlobal Facility Solution</p>
+                                </div>
+                                <span class="px-3 py-1 rounded-full bg-slate-800 text-slate-300 text-xs font-mono border border-slate-700">
+                                    <i class="far fa-calendar-alt text-mint-500 mr-1.5"></i>Professional Experience
+                                </span>
+                            </div>
+
+                            <ul class="space-y-3 text-slate-300 text-sm leading-relaxed">
+                                <li class="flex items-start gap-2.5">
+                                    <i class="fas fa-chevron-right text-mint-500 text-xs mt-1"></i>
+                                    <span><strong>IT Technical Support:</strong> Handled level 1 to level 2 desktop, OS, software, hardware, and network connectivity troubleshooting for facility staff.</span>
+                                </li>
+                                <li class="flex items-start gap-2.5">
+                                    <i class="fas fa-chevron-right text-mint-500 text-xs mt-1"></i>
+                                    <span><strong>Network Infrastructure:</strong> Installed, configured, and maintained router, switch ports, Wi-Fi access points, and Ethernet network wiring.</span>
+                                </li>
+                                <li class="flex items-start gap-2.5">
+                                    <i class="fas fa-chevron-right text-mint-500 text-xs mt-1"></i>
+                                    <span><strong>Printer Configuration & Troubleshooting:</strong> Managed network shared printers, thermal label printers, driver installation, and spooler bug fixes.</span>
+                                </li>
+                                <li class="flex items-start gap-2.5">
+                                    <i class="fas fa-chevron-right text-mint-500 text-xs mt-1"></i>
+                                    <span><strong>System Evaluation & Upgrades:</strong> Assessed company IT equipment, performed hardware upgrades (SSD/RAM), and recommended replacement strategies.</span>
+                                </li>
+                                <li class="flex items-start gap-2.5">
+                                    <i class="fas fa-chevron-right text-mint-500 text-xs mt-1"></i>
+                                    <span><strong>Data Storage & Backup:</strong> Maintained routine data backups on centralized storage drives to prevent data loss.</span>
+                                </li>
+                                <li class="flex items-start gap-2.5">
+                                    <i class="fas fa-chevron-right text-mint-500 text-xs mt-1"></i>
+                                    <span><strong>IT Intern Supervision & Training:</strong> Guided, mentored, and supervised incoming IT interns on standard operating procedures and computer networking.</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- CONTACT SECTION -->
+    <section id="contact" class="py-20 relative bg-slate-950/80 border-t border-slate-900">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            
+            <div class="text-center max-w-3xl mx-auto space-y-3 mb-16">
+                <h2 class="text-xs font-bold uppercase tracking-widest text-mint-500">Let's Connect</h2>
+                <p class="text-3xl sm:text-4xl font-extrabold text-white">Get In Touch</p>
+                <div class="w-16 h-1 bg-gradient-to-r from-mint-500 to-cyber-blue mx-auto rounded-full"></div>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-10">
+                
+                <!-- Contact Details -->
+                <div class="lg:col-span-5 space-y-6">
+                    <div class="glass-panel p-8 rounded-2xl space-y-6">
+                        <h3 class="text-xl font-bold text-white">Contact Information</h3>
+                        <p class="text-slate-300 text-sm">
+                            Feel free to reach out for IT infrastructure consultation, networking projects, security installations, or career opportunities!
+                        </p>
+
+                        <div class="space-y-4 pt-2">
+                            
+                            <!-- Email -->
+                            <div class="flex items-center gap-4 p-3 rounded-xl bg-slate-900/60 border border-slate-800 group hover:border-mint-500 transition-colors">
+                                <div class="w-10 h-10 rounded-lg bg-mint-500/20 text-mint-500 flex items-center justify-center text-lg">
+                                    <i class="fas fa-envelope"></i>
+                                </div>
+                                <div class="flex-1 overflow-hidden">
+                                    <p class="text-[11px] text-slate-400 uppercase font-bold">Email</p>
+                                    <a href="mailto:macccoydocot@gmail.com" class="text-sm font-semibold text-slate-200 hover:text-mint-500 transition-colors block truncate">
+                                        macccoydocot@gmail.com
+                                    </a>
+                                </div>
+                                <button onclick="copyToClipboard('macccoydocot@gmail.com')" class="text-slate-400 hover:text-white px-2 py-1 text-xs bg-slate-800 rounded border border-slate-700">Copy</button>
+                            </div>
+
+                            <!-- Mobile -->
+                            <div class="flex items-center gap-4 p-3 rounded-xl bg-slate-900/60 border border-slate-800 group hover:border-mint-500 transition-colors">
+                                <div class="w-10 h-10 rounded-lg bg-cyber-blue/20 text-cyber-blue flex items-center justify-center text-lg">
+                                    <i class="fas fa-phone-alt"></i>
+                                </div>
+                                <div class="flex-1">
+                                    <p class="text-[11px] text-slate-400 uppercase font-bold">Mobile Phone</p>
+                                    <a href="tel:09104036057" class="text-sm font-semibold text-slate-200 hover:text-mint-500 transition-colors">
+                                        09104036057
+                                    </a>
+                                </div>
+                                <button onclick="copyToClipboard('09104036057')" class="text-slate-400 hover:text-white px-2 py-1 text-xs bg-slate-800 rounded border border-slate-700">Copy</button>
+                            </div>
+
+                            <!-- GitHub -->
+                            <div class="flex items-center gap-4 p-3 rounded-xl bg-slate-900/60 border border-slate-800 group hover:border-mint-500 transition-colors">
+                                <div class="w-10 h-10 rounded-lg bg-slate-800 text-slate-200 flex items-center justify-center text-lg">
+                                    <i class="fab fa-github"></i>
+                                </div>
+                                <div class="flex-1 overflow-hidden">
+                                    <p class="text-[11px] text-slate-400 uppercase font-bold">GitHub</p>
+                                    <a href="https://github.com/maccoydocot" target="_blank" class="text-sm font-semibold text-slate-200 hover:text-mint-500 transition-colors block truncate">
+                                        github.com/maccoydocot
+                                    </a>
+                                </div>
+                            </div>
+
+                            <!-- LinkedIn -->
+                            <div class="flex items-center gap-4 p-3 rounded-xl bg-slate-900/60 border border-slate-800 group hover:border-mint-500 transition-colors">
+                                <div class="w-10 h-10 rounded-lg bg-cyber-cyan/20 text-cyber-cyan flex items-center justify-center text-lg">
+                                    <i class="fab fa-linkedin-in"></i>
+                                </div>
+                                <div class="flex-1 overflow-hidden">
+                                    <p class="text-[11px] text-slate-400 uppercase font-bold">LinkedIn</p>
+                                    <a href="https://www.linkedin.com/in/maccoydocot" target="_blank" class="text-sm font-semibold text-slate-200 hover:text-mint-500 transition-colors block truncate">
+                                        linkedin.com/in/maccoydocot
+                                    </a>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Contact Form -->
+                <div class="lg:col-span-7">
+                    <form id="contactForm" class="glass-panel p-8 rounded-2xl space-y-4">
+                        <h3 class="text-xl font-bold text-white mb-2">Send Me a Message</h3>
+
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                            <div>
+                                <label class="block text-xs font-semibold text-slate-300 uppercase tracking-wider mb-2">Your Name</label>
+                                <input type="text" required id="senderName" placeholder="Juan Dela Cruz" class="w-full px-4 py-3 rounded-xl bg-slate-900/80 border border-slate-700 text-white placeholder-slate-500 focus:outline-none focus:border-mint-500 transition-colors text-sm">
+                            </div>
+                            <div>
+                                <label class="block text-xs font-semibold text-slate-300 uppercase tracking-wider mb-2">Your Email</label>
+                                <input type="email" required id="senderEmail" placeholder="juan@example.com" class="w-full px-4 py-3 rounded-xl bg-slate-900/80 border border-slate-700 text-white placeholder-slate-500 focus:outline-none focus:border-mint-500 transition-colors text-sm">
+                            </div>
+                        </div>
+
+                        <div>
+                            <label class="block text-xs font-semibold text-slate-300 uppercase tracking-wider mb-2">Subject</label>
+                            <input type="text" required id="senderSubject" placeholder="IT Infrastructure / Networking Service Inquiry" class="w-full px-4 py-3 rounded-xl bg-slate-900/80 border border-slate-700 text-white placeholder-slate-500 focus:outline-none focus:border-mint-500 transition-colors text-sm">
+                        </div>
+
+                        <div>
+                            <label class="block text-xs font-semibold text-slate-300 uppercase tracking-wider mb-2">Message</label>
+                            <textarea required id="senderMessage" rows="5" placeholder="Hi Maccoy, I would like to inquire about setting up..." class="w-full px-4 py-3 rounded-xl bg-slate-900/80 border border-slate-700 text-white placeholder-slate-500 focus:outline-none focus:border-mint-500 transition-colors text-sm"></textarea>
+                        </div>
+
+                        <button type="submit" class="w-full py-3.5 rounded-xl bg-gradient-to-r from-mint-500 to-cyber-cyan text-slate-950 font-bold text-sm shadow-lg shadow-mint-500/20 hover:opacity-95 transition-all">
+                            Send Message
+                        </button>
+
+                        <div id="formAlert" class="hidden p-3 rounded-xl text-center text-xs font-semibold mt-2"></div>
+                    </form>
+                </div>
+
+            </div>
+
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="py-8 bg-slate-950 border-t border-slate-900 text-center text-slate-400 text-xs">
+        <div class="max-w-7xl mx-auto px-4 flex flex-col sm:flex-row items-center justify-between gap-4">
+            <div>
+                © 2026 <strong class="text-white">Maccoy Tech Solution</strong>. All rights reserved.
+            </div>
+            <div class="font-mono text-mint-500">
+                Dream • Learn • Build • Grow
+            </div>
+            <div class="flex items-center gap-1 text-slate-400">
+                <span>Powered by</span>
+                <i class="fab fa-github text-white text-sm"></i>
+                <span class="text-white">GitHub Pages</span>
+            </div>
+        </div>
+    </footer>
+
+    <!-- MODAL POPUP FOR PROJECTS -->
+    <div id="projectModal" class="fixed inset-0 z-50 bg-slate-950/80 backdrop-blur-sm hidden items-center justify-center p-4">
+        <div class="glass-panel p-6 sm:p-8 rounded-2xl max-w-md w-full space-y-4 border border-mint-500/30">
+            <div class="flex justify-between items-center border-b border-slate-800 pb-3">
+                <h3 id="modalTitle" class="text-lg font-bold text-white">Project Detail</h3>
+                <button onclick="closeProjectModal()" class="text-slate-400 hover:text-white"><i class="fas fa-times"></i></button>
+            </div>
+            <p id="modalDescription" class="text-slate-300 text-sm leading-relaxed"></p>
+            <div class="pt-2">
+                <button onclick="closeProjectModal()" class="w-full py-2.5 rounded-xl bg-slate-800 text-white font-semibold text-xs hover:bg-slate-700">Close Window</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- JAVASCRIPT LOGIC -->
+    <script>
+        // Mobile Menu Toggle Logic
+        const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+        const mobileMenu = document.getElementById('mobileMenu');
+        const menuIcon = document.getElementById('menuIcon');
+
+        mobileMenuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+            if (mobileMenu.classList.contains('hidden')) {
+                menuIcon.classList.remove('fa-times');
+                menuIcon.classList.add('fa-bars');
+            } else {
+                menuIcon.classList.remove('fa-bars');
+                menuIcon.classList.add('fa-times');
+            }
+        });
+
+        // Close mobile drawer when clicking link
+        document.querySelectorAll('.mobile-nav-link').forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+                menuIcon.classList.remove('fa-times');
+                menuIcon.classList.add('fa-bars');
+            });
+        });
+
+        // Project Filters Logic
+        const filterBtns = document.querySelectorAll('.filter-btn');
+        const projectCards = document.querySelectorAll('.project-card');
+
+        filterBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                filterBtns.forEach(b => {
+                    b.classList.remove('bg-mint-500', 'text-slate-950', 'active');
+                    b.classList.add('bg-slate-800', 'text-slate-300');
+                });
+                btn.classList.remove('bg-slate-800', 'text-slate-300');
+                btn.classList.add('bg-mint-500', 'text-slate-950', 'active');
+
+                const filter = btn.getAttribute('data-filter');
+
+                projectCards.forEach(card => {
+                    if (filter === 'all' || card.getAttribute('data-category') === filter) {
+                        card.style.display = 'flex';
+                    } else {
+                        card.style.display = 'none';
+                    }
+                });
+            });
+        });
+
+        // Modal Functionality
+        function openProjectModal(title, desc) {
+            document.getElementById('modalTitle').innerText = title;
+            document.getElementById('modalDescription').innerText = desc;
+            document.getElementById('projectModal').classList.remove('hidden');
+            document.getElementById('projectModal').classList.add('flex');
+        }
+
+        function closeProjectModal() {
+            document.getElementById('projectModal').classList.remove('flex');
+            document.getElementById('projectModal').classList.add('hidden');
+        }
+
+        // Copy Text Helper
+        function copyToClipboard(text) {
+            const tempInput = document.createElement('input');
+            tempInput.value = text;
+            document.body.appendChild(tempInput);
+            tempInput.select();
+            document.execCommand('copy');
+            document.body.removeChild(tempInput);
+
+            // Toast Alert Simulation
+            const alertBox = document.createElement('div');
+            alertBox.className = 'fixed bottom-5 right-5 z-50 px-4 py-2 bg-mint-500 text-slate-950 font-bold text-xs rounded-xl shadow-lg';
+            alertBox.innerText = 'Copied to clipboard: ' + text;
+            document.body.appendChild(alertBox);
+            setTimeout(() => alertBox.remove(), 2500);
+        }
+
+        // Contact Form Handler
+        document.getElementById('contactForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            const alertMsg = document.getElementById('formAlert');
+            alertMsg.className = 'p-3 rounded-xl text-center text-xs font-semibold mt-2 bg-mint-500/20 text-mint-500 border border-mint-500/40 block';
+            alertMsg.innerText = 'Thank you! Your message has been prepared for Maccoy Docot.';
+            this.reset();
+            setTimeout(() => {
+                alertMsg.className = 'hidden';
+            }, 5000);
+        });
+    </script>
+</body>
+</html>
